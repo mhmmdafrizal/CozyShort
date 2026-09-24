@@ -2,6 +2,10 @@
 
 A cozy, minimal URL shortener built with Next.js and React. Paste a long link and get a short one instantly via TinyURL, with one-click copy, a recent-links history stored in your browser, dark/light theme toggle, and a custom clear-history confirm dialog. No accounts, no backend database — everything stays on your device.
 
+## Screenshot
+
+![Desktop Mode](./public/screenshot/Screenshot.png)
+
 ## Features
 
 - Shorten any http/https URL via TinyURL (proxied server-side through `/api/shorten`)
