@@ -79,7 +79,14 @@ export default function Home() {
             setError("Enter a URL first.");
             return;
         }
-        const withScheme = /^https?:\/\//i.test(clean) ? clean : `https://${clean}`;
+        // reject unknown schemes (javascript:, file:, data:) BEFORE prefixing —
+        // otherwise `file:///etc/passwd` becomes `https://file:///etc/passwd` and passes isUrl
+        const scheme = clean.match(/^([a-z][a-z0-9+.-]*):/i)?.[1];
+        if (scheme && !/^https?$/i.test(scheme)) {
+            setError(`"${clean}" doesn't look like a valid URL.`);
+            return;
+        }
+        const withScheme = scheme ? clean : `https://${clean}`;
         if (!isUrl(withScheme)) {
             setError(`"${clean}" doesn't look like a valid URL.`);
             return;
