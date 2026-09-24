@@ -4,7 +4,7 @@ A cozy, minimal URL shortener built with Next.js and React. Paste a long link an
 
 ## Screenshot
 
-![Desktop Mode](./public/screenshot/Screenshot.png)
+![Desktop Mode](./public/screenshots/Screenshot.png)
 
 ## Features
 
